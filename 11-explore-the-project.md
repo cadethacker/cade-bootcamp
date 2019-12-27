@@ -1,6 +1,10 @@
 # Explore the Project
 
-## Opening
+## Goal
+
+Add a simple `/health` endpoint to your application
+
+## Implementation Details
 
 If you are like me, I learn through doing.  Although I learn quite a bit from reading articles and videos, ultimately I learn from doing.  Academics only get you so far :D 
 
@@ -81,12 +85,15 @@ Lets add a simple `/health` controller.
 1. Open the Project tab on the left so you see all the files. 
 2. Expand out `src/main/java/com.houseawesome.RetailBackend`
 3. Right Click on `com.houseawesome.RetailBackend` 
+4. Select `New --> Package`
+5. Enter `controllers`
+6. Right click on `com.houseawesome.RetailBackend.controllers`
 4. Select `New --> Java Class`
 5. For the name: `HealthController`
 6. Open the file and replace all the contents with this:
 
 ```
-package com.houseawesome.RetailBackend;
+package com.houseawesome.RetailBackend.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -125,10 +132,12 @@ curl -v http://localhost:8080/health; echo
 < Date: Fri, 27 Dec 2019 05:27:13 GMT
 < 
 * Connection #0 to host localhost left intact
-ok <------- WHOO HOOO!!!
+ok <--------------------------- WHOO HOOO!!!
 ```
 ## Further Reading and Research
 
 * https://spring.io/guides/gs/rest-service/
 * https://spring.io/guides/gs/relational-data-access/
 
+
+## [NEXT -->](12-layers-and-layers.md)
