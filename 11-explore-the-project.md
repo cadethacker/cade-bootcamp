@@ -20,7 +20,7 @@ So lets fire up the code exactly as is and see what happens.
 
 ## Running
 
-You have two options for running.  The serve different purposes, so I'll show you both
+You have two options for running.  They serve different purposes, so I'll show you both
 
 ### Option 1: Terminal 
 

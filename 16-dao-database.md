@@ -1,4 +1,4 @@
-# Creating the DAO / Database
+# Creating the Database
 
 Now we are ready to flush out the DAO Layer and Database layers.  Remember are architecture diagram?
 
@@ -150,7 +150,7 @@ f9847a80-6c27-4cd7-98fe-ad34510a2781,Toilet Plunger,2.98
 06df04e7-75df-44ad-8474-6ac51caa50c7,2x4 10ft,3.49
 ```
 
-Then run the below command:
+Then run the below command, changing out the path to the file for your laptop:
 
 ```
 retaildb=> \copy products FROM '/Users/cade/path/to/products-data.csv' DELIMITER ',' CSV HEADER

@@ -68,6 +68,9 @@ public class ProductServiceTest {
         assertEquals(returnedProduct.getName(), stagedProduct.getName());
         assertEquals(returnedProduct.getPrice(), stagedProduct.getPrice());
 
+        // check that the productDAO.getProductByID(...) was 
+        // called exactly once. this is a great way to catch 
+        // unintended side effects. 
         verify(productDAO, times(1)).getProductById(productID);
 
     }

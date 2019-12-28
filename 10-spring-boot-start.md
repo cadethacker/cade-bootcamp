@@ -30,7 +30,7 @@ This lets you create create a project with many different Spring-ness wired in a
 2. Choose the following items:
 
 ```
-Project:            Gradle**  
+Project:            Gradle  
 Language:           Java  
 Spring Boot:        Highest Non-Snapshot Release  
 
@@ -39,7 +39,7 @@ Group:              com.houseawesome
 Artifact:           RetailBackend
 Options:            Make sure Jar and Java8
 
-Dependencies***:
+Dependencies:
 + Spring Web
 + Spring Data JDBC
 + PostgresSQL Driver
@@ -51,7 +51,7 @@ NOTE: What about JPA? For the moment, I want to show JDBC connectivity between t
 
 3. Click "Generate" at the bottom
 
-A zip file will download to your laptop.  If you are on a Mac, then the file will be called RetailBackend.zip and will bein your ~/Downloads directory.  Open your terminal/iTerm2 and move this file to where ever you want to expand the zip file. For me, this is the command I run: 
+A zip file will download to your laptop.  If you are on a Mac, then the file will be called RetailBackend.zip and will be in your ~/Downloads directory.  Open your terminal/iTerm2 and move this file to where ever you want to expand the zip file. For me, this is the command I run: 
 
 `mv ~/Downloads/RetailBackend.zip ~/Documents/`
 
@@ -69,7 +69,6 @@ You can see that there are just less than 30 files and they are all inside a dir
 
 `unzip RetailBackend.zip`
 
-6. 
 
 ## **Further Reading and References**
 
