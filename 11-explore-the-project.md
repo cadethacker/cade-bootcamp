@@ -102,11 +102,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HealthController {
 
-    private static final String healthStatus = "ok";
-
     @RequestMapping(value = "/health", method = RequestMethod.GET)
     public String health() {
-        return healthStatus;
+        // imagine the code checking a few things like the database
+        // then returning "ok" or "error"
+        return "ok";
     }
 }
 ```

@@ -41,7 +41,6 @@ Options:            Make sure Jar and Java8
 
 Dependencies***:
 + Spring Web
-+ Lombok
 + Spring Data JDBC
 + PostgresSQL Driver
 + H2 Database

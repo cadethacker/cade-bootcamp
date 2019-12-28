@@ -64,12 +64,11 @@ public class Product {
         this.price.setScale(2, RoundingMode.HALF_EVEN);
     }
 }
-
 ```
 
 3. Lets unpack our `Product` model. 
 
-Lets quickly unpack this. Above is a simple object to hold Product information. It will hold the data from the database and pass it to the controller.  Or it will be created in the controller and passed to the DAO. Very useful. 
+Lets quickly unpack this. Above is a simple object to hold Product information. It will hold the data from the database and pass it to the controller.  Or it will be created in the controller and passed to the DAO to be stored or updated. Very useful. 
 
 4. Create Product Service
 
@@ -81,21 +80,24 @@ Add a new Java class to the `com.houseawesome.RetailBackend.models.services` pac
 package com.houseawesome.RetailBackend.models.services;
 
 import com.houseawesome.RetailBackend.models.dao.Product;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
+@Service
 public class ProductService {
 
-    public Product getProductByID(UUID productID) {
+    public Product getProductByID(UUID id) {
 
-        Product product1 = new Product();
+        // this would use the ID to pull from the DB eventually.
+        // but for now, return a static product. 
+        Product p = new Product();
+        p.setId(id);
+        p.setName("Exterior Paint");
+        p.setPrice(new BigDecimal(24.99));
 
-        product1.setId(productID);
-        product1.setName("Exterior Paint");
-        product1.setPrice(new BigDecimal("24.99"));
-
-        return product1;
+        return p;
     }
 }
 ```
@@ -110,36 +112,38 @@ Once you create the ProductController java file, copy the below code and replace
 ```
 package com.houseawesome.RetailBackend.controllers;
 
-import com.houseawesome.RetailBackend.models.Product;
+import com.houseawesome.RetailBackend.models.dao.Product;
+import com.houseawesome.RetailBackend.models.services.ProductService;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.UUID;
 
 @RestController
+@RequestMapping("/products")
 public class ProductController {
 
-    @RequestMapping(value = "/products/{productID}", method = RequestMethod.GET)
+    private final ProductService productService;
+
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
+
+    @RequestMapping(value = "/{productID}", method = RequestMethod.GET)
     public Product getProduct(@PathVariable("productID") UUID productID) {
 
-        Product product1 = new Product();
+        Product product = productService.getProductByID(productID);
 
-        product1.setId(productID);
-        product1.setName("Exterior Paint");
-        product1.setPrice(new BigDecimal("24.99"));
-
-        return product1;
+        return product;
     }
 }
 ```
 
-See the words that are added just before the classes and methods that start with `@`?  Those are called [annotations](https://en.wikipedia.org/wiki/Java_annotation). They "inject" functionality without having to copy and paste the [boilerplate code](https://en.wikipedia.org/wiki/Boilerplate_code).  They are very powerful, but warning, they can also cause unintended side effects.  So be careful.  
+See the words that are added just before the class name and methods that start with `@`?  Those are called [annotations](https://en.wikipedia.org/wiki/Java_annotation). They "inject" functionality without having to copy and paste the [boilerplate code](https://en.wikipedia.org/wiki/Boilerplate_code).  They are very powerful, but warning, they can also cause unintended side effects.  So be careful.  
 
-Hacker Note: If you want to dig into what an annotation actualy does (and set break points to walk the code). just press the Command key and click on the annotation in IntelliJ, and you will go into the code of the annotation.  I did this two years ago and for the better part of two days, ran and debugged the OAuth2 annotations. SO. MUCH. LEARNING!)
+Hacker Note: If you want to dig into what an annotation actualy does (and set break points to walk the code). just press the Command key and click on the annotation in IntelliJ, and you will go into the code of the annotation.  I did this a while back for the the better part of two days, ran and debugged the OAuth2 annotations. SO. MUCH. LEARNING!)
 
 5. Execute the API
 
@@ -155,3 +159,5 @@ $ curl -s 'http://localhost:8080/products/77A313EC-9C69-4D8B-A4D4-04117DB4EEB1'
 ```
 
 BOOM! :D 
+
+## [NEXT -->](14-unit-testing.md)
