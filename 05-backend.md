@@ -1,6 +1,6 @@
 # Backend
 
-On the backend, you really have 3 main areas of decisions:
+On the backend, you really have 2 main areas of decisions:
 
 * Platform
   * Google Cloud Platform (GCP)
@@ -12,11 +12,11 @@ On the backend, you really have 3 main areas of decisions:
   * Javascript / Express / NodeJS 
   * GOLang / StandardLib | Gorilla | Gin | etc
   * Python 3 / Flask
-  * Ruby
+  * Ruby / Rails
 
-Don't pick your favorite. Or pick one because you read a Medium post about how awesome it is.  Instead pick the one that best fits your company and maintainability. Good code will outlive you by years. 
+Don't pick one because it's your favorite you read a Medium post about how awesome it is.  Instead, pick the one that best fits your company's problemns and will provide something that's maintainable for your team longterm. Good code will outlive you by years. 
 
-There was a poster at my job that said: `Write your code like the maintainer is a raving psychopath.` It made me laugh but it is true.  Thinking about the entire life cycle of the app: Creation, Maintenance, and Deprecation.  If there are two python programmers in your entire company, and you decide to write your code in python, then you win the lottery and quit, who is going to maintain that code? 
+There was a poster at my job that said: `Write your code like the maintainer is a raving psychopath.` It made me laugh but its is true.  Thinking about the entire lifecycle of the app: Creation, Maintenance, and Deprecation.  If there are two python programmers in your entire company, you decide to write your code in python, and then you win the lottery and quit, who is going to maintain that code? 
 
 
 ## [NEXT -->](06-frontend.md)
