@@ -18,14 +18,14 @@ Create a starter backend.  No database... yet. Just get a couple of REST endpoin
 
 ### Starting is hard
 
-Starting a project is usually the hardest part of the task.  So many decisions to make. Project structure, all the little pieces that need to fit together.  Lucky, more and more languages have the idea of the "starter template" these days.  Create React App, Spring Initilizer, etc. 
+Starting a project is usually the hardest part of the task.  So many decisions to make. Project structure, all the little pieces that need to fit together.  Lucky, more and more languages have the idea of the "starter template" these days.  Create React App, Spring Initializr, etc. 
 
 
 ### Spring Initializr
 
 1. Open up [start.spring.io](https://start.spring.io/)
 
-This lets you create create a project with many different Spring-ness wired in auto-magically.  We will take this super slow. Focus only on the REST Controller first. 
+This lets you create a project with many different Spring-ness wired in auto-magically.  We will take this super slow. Focus only on the REST Controller first. 
 
 2. Choose the following items:
 
@@ -57,7 +57,7 @@ A zip file will download to your laptop.  If you are on a Mac, then the file wil
 
 4. Check the zip file.  
 
-Lets look into the zip file without exploding it. I want to make sure all the files are in a "root" directory:
+Let's look into the zip file without exploding it. I want to make sure all the files are in a "root" directory:
 
 `unzip -l RetailBackend.zip`  
 OR  
