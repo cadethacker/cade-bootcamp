@@ -1,30 +1,30 @@
 # REST
 
-Go back to the early days of the first computer systems, and you quickly hit one of the most critical problems.  How do you get information from one computer system to another? Over the years there have been dozens if not hundreds of protocols. some layered, some independent. You can easily google these. But fast forward to 2011, and REST was introduced.  Rest is a [Layer 7](https://en.wikipedia.org/wiki/OSI_model) protocol which sits on top of HTTP. REST stands for [Representational State Transfer](https://en.wikipedia.org/wiki/Representational_state_transfer),   Having worked with many other protocols (ORB, CORBA, RPC, etc), I must say the openness and simplicity of REST is refreshing. REST is a simple way of descriptiong in plain language what actions you want to take. 
+Go back to the early days of the first computer systems, and you quickly hit one of the most critical problems.  How do you get information from one computer system to another? Over the years there have been dozens if not hundreds of protocols. some layered, some independent. You can easily google these. But fast forward to 2011, and REST was introduced.  Rest is a [Layer 7](https://en.wikipedia.org/wiki/OSI_model) protocol which sits on top of HTTP. REST stands for [Representational State Transfer](https://en.wikipedia.org/wiki/Representational_state_transfer). Having worked with many other protocols (ORB, CORBA, RPC, etc), I must say the openness and simplicity of REST are refreshing. REST is a simple way of describing in plain language what actions you want to take. 
 
 ## What the CRUD is this about?
 
-Most all data interactions follows 4 major CRUD operations. 
+Most all data interactions follow 4 major CRUD operations. 
 
 * Create
 * Read
 * Update
 * Delete
 
-If you solve these main 4 options, then you are generally in a great position.  There are some others that get a little sideways such as large batch updates, and when create reports or data mining, you sometimes need to stretch the definition of REST, but all in all, the foundational blocks are CRUD. 
+If you solve these main 4 options, then you are generally in a great position.  There are some others that get a little sideways. Like when performing large batch, creating reports, or data mining, you sometimes need to stretch the definition of REST. But all in all, the foundational blocks are CRUD. 
 
 ## Client and Server
 
-In most all communications, one side is the client (meaning it "asks the question") and the other side is the "server or service" (meaning it answers the question)
+In most digital communication, one side is the client (meaning it "asks the question") and the other side is the "server or service" (meaning it "answers the question")
 
-For example, the client might be the frontend and the service is the backend.  The Client asks the backend for data. 
+For example, the client might be the frontend and the service is the backend.  The Client asks the backend Server for data. 
 
-## REST High Level Example
+## REST High-Level Example
 
-For a very real example, the Browser (Frontend) asks the Service(Backend) for a list of products so it can display them to the human customer:
+For a very real example, the Browser (Frontend) asks the Service (Backend) for a list of products so it can display them to the human customer:
 
 Client (Browser / Frontend): 
-Hey service at https://retail-backend.my-gcp-project.com/products  can you get me a list of products?
+Hey, service at https://retail-backend.my-gcp-project.com/products can you get me a list of products?
 
 And that request looks like this:
 ```
@@ -32,7 +32,7 @@ GET /products HTTP/1.1
 host: retail-backend.my-gcp-project.com
 ```
 
-The Service (Server / Backend) responses with:
+The Service (Server / Backend) responds with:
 
 ```
 Headers
@@ -103,7 +103,7 @@ and price less than $10
 Update
 =====
 
-Update all data for existing product
+Update all data for an existing product
 --------------------
   PUT /products/123456
   BODY: {  
@@ -139,25 +139,25 @@ There tons of great articles, videos, and debates about REST design but the abov
 
 ## HTTP Status Codes
 
-Status codes are the best first indicators from the service back to the client on how the operations was executed. This is a code that is given from the service *BACK* to the client to tell how the call went.  
+Status codes are the best first indicators from the service back to the client on how the operations were executed. This is a code that is given from the service *BACK* to the client to tell how the call went.  
 
-There are [dozens of Status Codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) but I'd focus on the following common ones.  It is generally considered good pratice to use the most common ones and leave the rest alone. 
+There are [dozens of Status Codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) but I'd focus on the following common ones.  It is generally considered good practice to use the most common ones and leave the rest alone. 
 
 
-Personally this is all I use in my API:
+Personally, this is all I use in my API:
 ```
 
 READ, Update, or Delete successfully 
   200 - OK
 
-Create successful:
+Create successfully:
   201 - Created
 
 Not Here
-  301 - What you are looking for has moved permanantely
+  301 - What you are looking for has moved permanently
   302 - What you are looking for has moved temporarily
 
-Client Side Error (something the caller can correct)
+Client-Side Error (something the caller can correct)
   400 - Bad Call
   404 - Resource not found
 
@@ -165,7 +165,7 @@ Client Side Error (something the caller can correct)
   403 - No Authorization provided
 
 Server Side Error:
-  500 - something on server side failed.  Nothing client can do. 
+  500 - something on the server-side failed.  Nothing the client can do. 
 
 ```
 

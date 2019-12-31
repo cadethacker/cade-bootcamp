@@ -6,7 +6,7 @@ Add a simple `/health` endpoint to your application
 
 ## Implementation Details
 
-If you are like me, I learn through doing.  Although I learn quite a bit from reading articles and videos, ultimately I learn from doing.  Academics only get you so far :D 
+If you are like me, you learn best through doing.  Although I learn quite a bit from reading articles and videos, ultimately I learn from doing.  Academics only get you so far :D 
 
 So lets fire up the code exactly as is and see what happens. 
 
@@ -14,9 +14,9 @@ So lets fire up the code exactly as is and see what happens.
 
 2. On the splash screen click the `Open` button
 
-3. In the Open Dialog, naviagate to the folder that we exploded in the previous step. 
+3. In the Open Dialog, navigate to the folder that we exploded in the previous step. 
 
-4. Click "Open".  This will import the project and run the gradle setup. 
+4. Click "Open".  This will import the project and run the Gradle setup. 
 
 ## Running
 
@@ -24,7 +24,7 @@ You have two options for running.  They serve different purposes, so I'll show y
 
 ### Option 1: Terminal 
 
-1. Open the built in terminal in IntelliJ.
+1. Open the built-in terminal in IntelliJ.
 
 2. In the terminal type `./gradlew clean bootRun`
 
@@ -52,11 +52,11 @@ Because SpringBoot apps have a `main()` then IntelliJ can find it and execute it
 
 3. To stop, you can click `Run --> Stop 'RetailBackendApplication'` or click the red stop square on the debug window. 
 
-Why use this method instead of via `gradlew`? Because this gives you access to the step through debugger.  Just click `Run --> Debug 'RetailBackendApplication'` Set a break point and you can walk all your code. 
+Why use this method instead of via `gradlew`? Because this gives you access to the step-through debugger.  Just click `Run --> Debug 'RetailBackendApplication'` Set a breakpoint and you can walk all your code. 
 
 ### Is the app alive? 
 
-If you open your browser to http://localhost:8080 (you can veify that in the console/terminal output) you should see a simple error message:
+If you open your browser to http://localhost:8080 (you can verify that in the console/terminal output) you should see a simple error message:
 
 ```
 Whitelabel Error Page
@@ -67,27 +67,27 @@ There was an unexpected error (type=Not Found, status=404).
 No message available
 ```
 
-This is a success.  You hit the Servlet engine which basially said, `I have no clue what todo`. and gave you back an error.  Whoo hoo! 
+This is a success.  You hit the Servlet engine which basically said, `I have no clue what to do`. and gave you back an error.  Whoo hoo! 
 
 
 ## GET /health
 
-At this point, you could be familar with the concept of MVC, but if not, let me give you the elevator pitch:
+At this point, you could be familiar with the concept of MVC, but if not, let me give you the elevator pitch:
 
-MVC stands for [Model, View, and Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).  It is one of the longest lasting architecture patterns, having been introduced in the late 1970s, and is still powerful today. 
+MVC stands for [Model, View, and Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).  It is one of the longest-lasting architecture patterns, having been introduced in the late 1970s, and is still powerful today. 
 
 * Model - The representation of the data. User class, Product class, etc
-* View - How the Model (data) will be manipulated to show the user. The "View" is less important on the server side, depending on the pattern being implemented. 
+* View - How the Model (data) will be manipulated to show the user. The "View" is less important on the server-side, depending on the pattern being implemented. 
 * Controller - Is the "brains" of the operation.  It is the Air Traffic Controller. It reacts to the inputs and uses the models and the views to process and prepare the data. 
 
-Lets add a simple `/health` controller.  
+Let's add a simple `/health` controller.  
 
 1. Open the Project tab on the left so you see all the files. 
 2. Expand out `src/main/java/com.houseawesome.RetailBackend`
-3. Right Click on `com.houseawesome.RetailBackend` 
+3. Right-click on `com.houseawesome.RetailBackend` 
 4. Select `New --> Package`
 5. Enter `controllers`
-6. Right click on `com.houseawesome.RetailBackend.controllers`
+6. Right-click on `com.houseawesome.RetailBackend.controllers`
 4. Select `New --> Java Class`
 5. For the name: `HealthController`
 6. Open the file and replace all the contents with this:

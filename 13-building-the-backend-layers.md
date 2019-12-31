@@ -2,13 +2,13 @@
 
 Now lets start to flush out our MVC layers. 
 
-A few chapters back, we built our first rest end point.   Lets build a real end point and a unit test to go with it. 
+A few chapters back, we built our first rest endpoint. Let's build a real endpoint and a unit test to go with it. 
 
 ## Our First Product
 
 1. Create a new java package.  
 
-We need to create three new package in java to hold our models. So right click on the existing src folder and choose New and Package.  Add the two packages listed below:
+We need to create three new packages in java to hold our models. So right-click on the existing src folder and choose New and Package.  Add the two packages listed below:
 
 ```
 com.houseawesome.RetailBackend.models.dao
@@ -66,15 +66,15 @@ public class Product {
 }
 ```
 
-3. Lets unpack our `Product` model. 
+3. Let's unpack our `Product` model. 
 
-Lets quickly unpack this. Above is a simple object to hold Product information. It will hold the data from the database and pass it to the controller.  Or it will be created in the controller and passed to the DAO to be stored or updated. Very useful. 
+Above is a simple object to hold Product information. It will hold the data from the database and pass it to the controller.  Or it will be created in the controller and passed to the DAO to be stored or updated. Very useful. 
 
-4. Create Product Service
+4. Create the Product Service
 
-This is the business logic abstraction layer. This will allow easier testing by seperating out the logic into super small building blocks. 
+This is the business logic abstraction layer. This will allow easier testing by separating out the logic into super small building blocks. 
 
-Add a new Java class to the `com.houseawesome.RetailBackend.models.services` package you created above. The class should be called "ProductService". Then copy the blow code:
+Add a new Java class to the `com.houseawesome.RetailBackend.models.services` the package you created above. The class should be called "ProductService". Then copy the below code:
 
 ```
 package com.houseawesome.RetailBackend.models.services;
@@ -103,7 +103,7 @@ public class ProductService {
 ```
 
 
-5. Create Product Controller
+5. Create the Product Controller
 
 In the `com.houseawesome.RetailBackend.controllers` package, we need to create another controller.  This time, I'm not going to give you the steps. I've already covered them. Can you remember?
 
@@ -143,11 +143,11 @@ public class ProductController {
 
 See the words that are added just before the class name and methods that start with `@`?  Those are called [annotations](https://en.wikipedia.org/wiki/Java_annotation). They "inject" functionality without having to copy and paste the [boilerplate code](https://en.wikipedia.org/wiki/Boilerplate_code).  They are very powerful, but warning, they can also cause unintended side effects.  So be careful.  
 
-Hacker Note: If you want to dig into what an annotation actualy does (and set break points to walk the code). just press the Command key and click on the annotation in IntelliJ, and you will go into the code of the annotation.  I did this a while back for the the better part of two days, ran and debugged the OAuth2 annotations. SO. MUCH. LEARNING!)
+Hacker Note: If you want to dig into what an annotation actually does (and set breakpoints to walk the code). just press the Command key and click on the annotation in IntelliJ, and you will go into the code of the annotation.  I did this a while back for the better part of two days, ran and debugged the OAuth2 annotations. SO. MUCH. LEARNING!)
 
 5. Execute the API
 
-Now Restart, Run, or Debug the application, and using either curl, postman, or browser (I always recomment postman), hit the endpoint. side note, if on a mac the `uuidgen` command is great to generate UUID on the fly. 
+Now Restart, Run, or Debug the application, and using either curl, postman, or browser (I always recommend postman), hit the endpoint. side note, if on a mac the `uuidgen` command is great to generate UUID on the fly. 
 
 ```
 $ curl -s 'http://localhost:8080/products/77A313EC-9C69-4D8B-A4D4-04117DB4EEB1'
